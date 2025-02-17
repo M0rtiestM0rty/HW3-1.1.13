@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+/*Write a code fragment to print the transposition
+(rows and columns changed) of a two-dimensional array with M rows and N columns */
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
-}
+class Main
+{
+    public static void main(String[] args)
+    {
+        int [][] myNumbers = {{1,2,3},
+                             {4,5,6},
+                             {7,8,9}};
+
+        System.out.println("Original array:");
+
+        for (int m = 0; m < myNumbers.length; m++)
+        {
+            for (int n = 0; n < myNumbers[0].length; n++)
+            {
+                System.out.print(myNumbers[n][m] + " ");
+            }//end n for loop
+            System.out.println();
+        }//end m for loop
+/// //////////////////////////////////////////////////////////////////////////////////////////
+        System.out.println("Transposed array:");
+
+        int [][] transposed = new int[myNumbers[0].length][myNumbers.length];
+
+        for(int m = 0; m < myNumbers.length; m++)
+        {
+             for(int n = 0; n < myNumbers.length; n++)
+             {
+                 transposed [n][m] = myNumbers[m][n];
+                 System.out.print(transposed[n][m] + " ");
+             }//end 2nd n for loop
+        System.out.println();
+        }// end 2nd m for loop
+
+    }//end main
+}//end class
